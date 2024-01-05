@@ -1746,7 +1746,7 @@
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
                             <snmp_oid>.1.3.6.1.4.1.14823.1.6.1.1.3.1.1.3.{#SNMPINDEX}</snmp_oid>
-                            <key>aruba.cppm.app.port[{#SNMPVALUE}][{#SNMPINDEX}]</key>
+                            <key>aruba.cppm.app.port[{#SNMPVALUE},{#SNMPINDEX}]</key>
                             <delay>3600</delay>
                             <history>90</history>
                             <trends>0</trends>
@@ -1790,7 +1790,7 @@
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
                             <snmp_oid>.1.3.6.1.4.1.14823.1.6.1.1.3.1.1.4.{#SNMPINDEX}</snmp_oid>
-                            <key>aruba.cppm.app.traffic[{#SNMPVALUE}][{#SNMPINDEX}]</key>
+                            <key>aruba.cppm.app.traffic[{#SNMPVALUE},{#SNMPINDEX}]</key>
                             <delay>120</delay>
                             <history>90</history>
                             <trends>0</trends>
@@ -1831,7 +1831,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Template Aruba ClearPass Policy Manager:aruba.cppm.app.port[{#SNMPVALUE}][{#SNMPINDEX}].diff()}=1</expression>
+                            <expression>{Template Aruba ClearPass Policy Manager:aruba.cppm.app.port[{#SNMPVALUE},{#SNMPINDEX}].diff()}=1</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Application {#SNMPVALUE} port has been changed on {HOST.NAME}</name>
@@ -1889,7 +1889,7 @@
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
                             <snmp_oid>.1.3.6.1.4.1.14823.1.6.1.1.2.5.1.4.{#SNMPINDEX}</snmp_oid>
-                            <key>aruba.cppm.ps.authz.fail[{#SNMPVALUE}][{#SNMPINDEX}]</key>
+                            <key>aruba.cppm.ps.authz.fail[{#SNMPVALUE},{#SNMPINDEX}]</key>
                             <delay>60</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -1933,7 +1933,7 @@
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
                             <snmp_oid>.1.3.6.1.4.1.14823.1.6.1.1.2.5.1.3.{#SNMPINDEX}</snmp_oid>
-                            <key>aruba.cppm.ps.authz.suc[{#SNMPVALUE}][{#SNMPINDEX}]</key>
+                            <key>aruba.cppm.ps.authz.suc[{#SNMPVALUE},{#SNMPINDEX}]</key>
                             <delay>60</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -1977,7 +1977,7 @@
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
                             <snmp_oid>.1.3.6.1.4.1.14823.1.6.1.1.2.5.1.6.{#SNMPINDEX}</snmp_oid>
-                            <key>aruba.cppm.ps.authz.time[{#SNMPVALUE}][{#SNMPINDEX}]</key>
+                            <key>aruba.cppm.ps.authz.time[{#SNMPVALUE},{#SNMPINDEX}]</key>
                             <delay>60</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -2021,7 +2021,7 @@
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
                             <snmp_oid>.1.3.6.1.4.1.14823.1.6.1.1.2.5.1.5.{#SNMPINDEX}</snmp_oid>
-                            <key>aruba.cppm.ps.authz.total[{#SNMPVALUE}][{#SNMPINDEX}]</key>
+                            <key>aruba.cppm.ps.authz.total[{#SNMPVALUE},{#SNMPINDEX}]</key>
                             <delay>60</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -2062,7 +2062,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Template Aruba ClearPass Policy Manager:aruba.cppm.ps.authz.time[{#SNMPVALUE}][{#SNMPINDEX}].avg(3m)}&gt;={$AUTHZ_TIME}</expression>
+                            <expression>{Template Aruba ClearPass Policy Manager:aruba.cppm.ps.authz.time[{#SNMPVALUE},{#SNMPINDEX}].avg(3m)}&gt;={$AUTHZ_TIME}</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Authorization response time from {#SNMPVALUE} is high on {HOST.NAME}</name>
@@ -2078,7 +2078,7 @@
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Template Aruba ClearPass Policy Manager:aruba.cppm.ps.authz.fail[{#SNMPVALUE}][{#SNMPINDEX}].change(5m)}&gt;={$HIGH_FAILED_AUTHZ}</expression>
+                            <expression>{Template Aruba ClearPass Policy Manager:aruba.cppm.ps.authz.fail[{#SNMPVALUE},{#SNMPINDEX}].change(5m)}&gt;={$HIGH_FAILED_AUTHZ}</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Failed authorizations from {#SNMPVALUE} is high on {HOST.NAME}</name>
@@ -2136,7 +2136,7 @@
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
                             <snmp_oid>.1.3.6.1.4.1.14823.1.6.1.1.2.4.1.3.{#SNMPINDEX}</snmp_oid>
-                            <key>aruba.cppm.ppe.time[{#SNMPVALUE}][{#SNMPINDEX}]</key>
+                            <key>aruba.cppm.ppe.time[{#SNMPVALUE},{#SNMPINDEX}]</key>
                             <delay>60</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -2177,7 +2177,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Template Aruba ClearPass Policy Manager:aruba.cppm.ppe.time[{#SNMPVALUE}][{#SNMPINDEX}].avg(3m)}&gt;={$POLICY_EVAL_TIME}</expression>
+                            <expression>{Template Aruba ClearPass Policy Manager:aruba.cppm.ppe.time[{#SNMPVALUE},{#SNMPINDEX}].avg(3m)}&gt;={$POLICY_EVAL_TIME}</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Policy evaluation for {#SNMPVALUE} is high on {HOST.NAME}</name>
@@ -2235,7 +2235,7 @@
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
                             <snmp_oid>.1.3.6.1.4.1.14823.1.6.1.1.2.2.1.4.{#SNMPINDEX}</snmp_oid>
-                            <key>aruba.cppm.rad.auth.fail[{#SNMPVALUE}][{#SNMPINDEX}]</key>
+                            <key>aruba.cppm.rad.auth.fail[{#SNMPVALUE},{#SNMPINDEX}]</key>
                             <delay>60</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -2279,7 +2279,7 @@
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
                             <snmp_oid>.1.3.6.1.4.1.14823.1.6.1.1.2.2.1.3.{#SNMPINDEX}</snmp_oid>
-                            <key>aruba.cppm.rad.auth.suc[{#SNMPVALUE}][{#SNMPINDEX}]</key>
+                            <key>aruba.cppm.rad.auth.suc[{#SNMPVALUE},{#SNMPINDEX}]</key>
                             <delay>60</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -2323,7 +2323,7 @@
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
                             <snmp_oid>.1.3.6.1.4.1.14823.1.6.1.1.2.2.1.6.{#SNMPINDEX}</snmp_oid>
-                            <key>aruba.cppm.rad.auth.time[{#SNMPVALUE}][{#SNMPINDEX}]</key>
+                            <key>aruba.cppm.rad.auth.time[{#SNMPVALUE},{#SNMPINDEX}]</key>
                             <delay>60</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -2367,7 +2367,7 @@
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
                             <snmp_oid>.1.3.6.1.4.1.14823.1.6.1.1.2.2.1.5.{#SNMPINDEX}</snmp_oid>
-                            <key>aruba.cppm.rad.auth.total[{#SNMPVALUE}][{#SNMPINDEX}]</key>
+                            <key>aruba.cppm.rad.auth.total[{#SNMPVALUE},{#SNMPINDEX}]</key>
                             <delay>60</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -2408,7 +2408,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Template Aruba ClearPass Policy Manager:aruba.cppm.rad.auth.fail[{#SNMPVALUE}][{#SNMPINDEX}].change(5m)}&gt;={$HIGH_FAILED_RAD}</expression>
+                            <expression>{Template Aruba ClearPass Policy Manager:aruba.cppm.rad.auth.fail[{#SNMPVALUE},{#SNMPINDEX}].change(5m)}&gt;={$HIGH_FAILED_RAD}</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Failed RADIUS Auth from {#SNMPVALUE} is high on {HOST.NAME}</name>
@@ -2424,7 +2424,7 @@
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Template Aruba ClearPass Policy Manager:aruba.cppm.rad.auth.time[{#SNMPVALUE}][{#SNMPINDEX}].avg(3m)}&gt;={$RAD_TIME}</expression>
+                            <expression>{Template Aruba ClearPass Policy Manager:aruba.cppm.rad.auth.time[{#SNMPVALUE},{#SNMPINDEX}].avg(3m)}&gt;={$RAD_TIME}</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>RADIUS auth response time from {#SNMPVALUE} is high on {HOST.NAME}</name>
@@ -2482,7 +2482,7 @@
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
                             <snmp_oid>.1.3.6.1.4.1.2021.8.1.101.{#SNMPINDEX}</snmp_oid>
-                            <key>aruba.cppm.sys.serv.cmd.out[{#SNMPVALUE}][{#SNMPINDEX}]</key>
+                            <key>aruba.cppm.sys.serv.cmd.out[{#SNMPVALUE},{#SNMPINDEX}]</key>
                             <delay>300</delay>
                             <history>90</history>
                             <trends>0</trends>
@@ -2526,7 +2526,7 @@
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
                             <snmp_oid>.1.3.6.1.4.1.2021.8.1.3.{#SNMPINDEX}</snmp_oid>
-                            <key>aruba.cppm.sys.serv.cmd[{#SNMPVALUE}][{#SNMPINDEX}]</key>
+                            <key>aruba.cppm.sys.serv.cmd[{#SNMPVALUE},{#SNMPINDEX}]</key>
                             <delay>86400</delay>
                             <history>90</history>
                             <trends>0</trends>
@@ -2570,7 +2570,7 @@
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
                             <snmp_oid>.1.3.6.1.4.1.2021.8.1.100.{#SNMPINDEX}</snmp_oid>
-                            <key>aruba.cppm.sys.serv.exstat[{#SNMPVALUE}][{#SNMPINDEX}]</key>
+                            <key>aruba.cppm.sys.serv.exstat[{#SNMPVALUE},{#SNMPINDEX}]</key>
                             <delay>300</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -2611,7 +2611,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Template Aruba ClearPass Policy Manager:aruba.cppm.sys.serv.cmd.out[{#SNMPVALUE}][{#SNMPINDEX}].regexp(running)}=0</expression>
+                            <expression>{Template Aruba ClearPass Policy Manager:aruba.cppm.sys.serv.cmd.out[{#SNMPVALUE},{#SNMPINDEX}].regexp(running)}=0</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Service state {#SNMPVALUE} has changed on {HOST.NAME}</name>
